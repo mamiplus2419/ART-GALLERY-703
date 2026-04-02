@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+/* ==============================================
+   ◆ 全体に対する基本指定
+============================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: YuGothic, "Yu Gothic", 游ゴシック, 游ゴシック体, sans-serif;
+    color: #fff;
+}
+
+/* ~~~ wrapによるコンテンツ幅の制御 ~~~ */
+
+.wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* ~~~ 横並び用 のクラス名「flex」の記述 ~~~ */
+.flex {
+    display: flex;
+}
+
+/* ~~~ h2見出しの記述 ~~~ */
+h2 {
+    padding-top: 50px;
+}
+
+section,
+article {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+section h2,
+article h2 {
+    padding: 50px 0;
+}
+
+
+/* ==============================================
+   ◆ ヘッダー部分
+============================================== */
+
+header {
+    background-color: #afafb0;
+}
+
+header h1 img {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+nav .flex {
+    justify-content: center;
+}
+
+
+/* ==============================================
+   ◆ メイン部分
+============================================== */
+
+/* ~~~ メインビジュアルの記述 ~~~ */
+
+.frame {
+    margin: 30px auto;
+}
+
+#large-frame {
+    position: relative;
+    width: 600px;
+    height: 684px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    }
+
+#large-frame img {
+    position: absolute;
+    top: 0;
+  left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    object-position: center;
+    transition: opacity 3s;
+}
+
+
+/* ~~~ メインビジュアル下のサムネイル画像の記述 ~~~ */
+
+#buttons.flex {
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* ~~~ メインテキストと縦スライドの記述 ~~~ */
+
+.top-main {
+    background-color: #afafb0;
+}
+
+.inner {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.top-main .flex {
+    justify-content: space-between;
+}
+
+.top-text {
+    width: 554px;
+    margin: auto;
+    text-align: justify;
+}
+
+.large-text {
+    margin-bottom: 54px;
+}
+
+.top-text span {
+    font-size: 28px;
+}
+
+.top-margin36 {
+    margin-top: 36px;
+}
+
+
+/* ★背景画像の無限横スクロールアニメ */
+
+@keyframes bg-move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 -3454px;
+        /* 「-1416px」＝用意した画像の横幅 */
+    }
+}
+
+.slider-area {
+    width: 350px;
+    height: 530px;
+    /* 「350px」＝用意した画像の幅 */
+    background-image: url(../images/slide-image_350x3454.png);
+    background-repeat: repeat-y;
+    background-position: 0 0;
+    animation: bg-move 50s linear infinite;
+}
+
+/* ~~~ NEWSエリアの記述 */
+
+.top-article {
+    background-color: #efefef;
+    color: #000;
+}
+
+.top-article .inner {
+    display: block;
+    width: 430px;
+    margin: 0 auto;
+}
+
+article .link-button {
+    text-align: right;
+}
+
+.top-article a {
+    display: inline-block;
+    padding-top: 30px;
+    color: #000;
+}
+
+
+/* ==============================================
+   ◆ フッター部分
+============================================== */
+
+footer {
+    background-color: #afafb0;
+    padding: 50px 0;
+}
+
+/* ロゴ、住所、インスタの横並び */
+footer .flex {
+    padding: 0 200px 50px;
+    justify-content: space-between;
+}
+
+/* コピーライト */
+footer .copyright {
+    text-align: center;
+}
+
+footer .copyright small {
+    font-size: 14px;
+}
+
+
+/* ==============================================
+    トップボタン 
+============================================== */
+
+.to-top {
+    /* ブラウザ右下に固定 */
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+}
