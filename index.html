@@ -46,7 +46,10 @@
         <h1><a href="#"><img src="assets/images/ART&GALLERY703_logo_313x72.svg" alt="ART&GALLERY 703のロゴ" width="313"
                     height="72"></a></h1>
 
-        <nav>
+        <!-- ↓　ハンバーガーボタンのコードを設置(今回は動作はJSで制御するのでInputタグは使用しない)　↓ -->
+        <div class="nav-burger"></div>
+
+        <nav class="navi">
             <ul class="flex">
                 <li class="nav01"><a href="#">HOME</a></li>
                 <li class="nav02"><a href="about/index.html">ABOUT</a></li>
@@ -96,16 +99,19 @@
             <div class="inner">
                 <h2>NEWS</h2>
                 <ul>
-                    <li>
-                        〇/〇/〇　第2回大澤ふゆか展 大好評につき延長決定！
+                    <li class="sp-flex">
+                        <div>〇/〇/〇　</div>
+                        <div>第2回大澤ふゆか展 大好評につき延長決定！</div>
                     </li>
 
-                    <li>
-                        〇/〇/〇　新宿あかり 第78回寿司アート 特別賞　受賞！
+                    <li class="sp-flex">
+                        <div>〇/〇/〇　</div>
+                        <div>新宿あかり 第78回寿司アート 特別賞　受賞！</div>
                     </li>
 
-                    <li>
-                        〇/〇/〇　東野 豊 トークイベントレポートアップ
+                    <li class="sp-flex">
+                        <div>〇/〇/〇　</div>
+                        <div>東野 豊 トークイベントレポートアップ</div>
                     </li>
                 </ul>
                 <div class="link-button"><a href="news/index.html">一覧を見る＞</a></div>
@@ -115,34 +121,36 @@
     </main>
 
     <footer>
-        <div class="flex">
-            <div>
-                <img src="assets/images/ART&GALLERY703_logo_313x72.svg" alt="ART&GALLERY 703のロゴ" width="313"
-                    height="72">
-            </div>
+        <div class="inner">
+            <div class="flex">
+                <div>
+                    <img src="assets/images/ART&GALLERY703_logo_313x72.svg" alt="ART&GALLERY 703のロゴ" width="313"
+                        height="72">
+                </div>
 
-            <div>
-                <address>
-                    <p>
-                        東京都渋谷区神宮前1丁目1-13
-                    </p>
-                    <p>
-                        TEL 03-xxxx-xxxx
-                    </p>
-                    <p>
-                        営業時間 11:00～18:00
-                    </p>
-                    <p>
-                        定休日 月曜
-                    </p>
-                </address>
-            </div>
+                <div>
+                    <address>
+                        <p>
+                            東京都渋谷区神宮前1丁目1-13
+                        </p>
+                        <p>
+                            TEL 03-xxxx-xxxx
+                        </p>
+                        <p>
+                            営業時間 11:00～18:00
+                        </p>
+                        <p>
+                            定休日 月曜
+                        </p>
+                    </address>
+                </div>
 
-            <div class="insta">
-                <p>公式Instagram</p>
-                <a href="#"><img src="assets/images/Instagram_Glyph_White.svg" alt="ART&GALLERY 703のInstagramアカウントへ"
-                        width="50" height="50"></a>
+                <div class="insta">
+                    <p>公式Instagram</p>
+                    <a href="#"><img src="assets/images/Instagram_Glyph_White.svg" alt="ART&GALLERY 703のInstagramアカウントへ"
+                            width="50" height="50"></a>
 
+                </div>
             </div>
         </div>
 
