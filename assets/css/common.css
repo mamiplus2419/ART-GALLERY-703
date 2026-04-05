@@ -245,12 +245,30 @@ nav .flex {
 
 .top-article .inner {
     display: block;
-    max-width: 430px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
 .top-article .inner li div {
     width: 100%;
+}
+
+.sp-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 1em;
+}
+
+.sp-flex .date {
+    padding-left: 1em;
+    max-width: 100px;
+    text-align: left;
+}
+
+.sp-flex .topic {
+    max-width: 350px;
+    text-align: left;
 }
 
 article .link-button {
@@ -259,7 +277,7 @@ article .link-button {
 
 .top-article a {
     display: inline-block;
-    padding: 30px 150px 50px 0;
+    padding: 30px 20px 0 0;
     color: #000;
 }
 
@@ -275,7 +293,7 @@ footer {
 
 /* ロゴ、住所、インスタの横並び */
 footer .flex {
-    padding: 0 200px 50px;
+    padding: 0 50px 50px;
     justify-content: space-between;
 }
 
@@ -323,16 +341,29 @@ footer .copyright small {
 
 @media screen and (max-width: 1040px) {
 
-    /* フッター */
-    footer .flex {
-        padding: 0 auto;
-        width: 90%;
-        /* 画面の90%の幅に自動で縮む */
+    /* トップテキスト */
+    .top-text {
+        width: 554px;
+        margin: auto;
+        text-align: justify;
+    }
+
+}
+
+
+/* -----------------------------------------
+  820px以下の画面に向けた記述（個人的に気持ち悪いので微調整）
+----------------------------------------- */
+
+@media screen and (max-width: 820px) {
+
+    /* トップテキスト */
+    .top-text {
+        max-width: 400px;
     }
 
     /* トップボタン */
     .to-top {
-        /* 表示位置の調整 */
         right: 10px;
     }
 
@@ -486,13 +517,13 @@ footer .copyright small {
         position: relative !important;
         width: 100% !important;
         max-width: 600px !important;
-        max-height: 480px;
+        max-height: 685px;
 
         /* ★外枠の高さを比率で固定（画像が変わってもガタガタしない） */
         aspect-ratio: 1 / 1 !important;
         /* ★背景色をグレーから白へ */
         background-color: #fff !important;
-        margin: 50px auto !important;
+        margin: 50px auto 20px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -512,13 +543,22 @@ footer .copyright small {
         object-fit: contain !important;
     }
 
+    #buttons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+
     /* --------------------
        NEWSエリア
     -------------------- */
     .top-article .inner {
         width: 90% !important;
         /* 少し余裕を持たせる */
-        max-width: 430px !important;
+        max-width: 450px !important;
         /* PC版のテキスト幅を維持 */
         margin: 0 auto !important;
         /* ★これでど真ん中に来る */
@@ -526,6 +566,10 @@ footer .copyright small {
         /* リスト自体は左寄せ */
         padding: 0 !important;
         /* 余計なパディングを消す */
+    }
+
+    .top-article h2 {
+        text-align: center;
     }
 
     /* リンクボタンを右端に */
@@ -537,15 +581,8 @@ footer .copyright small {
         font-size: 14px;
     }
 
-    /* --------------------
-       トップボタン
-    -------------------- */
-    .to-top {
-        position: fixed !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        width: 50px !important;
-        z-index: 9000 !important;
+    .top-article p {
+        font-size: 12px;
     }
 
     /* --------------------
@@ -555,12 +592,12 @@ footer .copyright small {
         flex-direction: column;
         align-items: center !important;
         /* ← ここ変更 */
-        padding: 0 20px 50px !important;
+        padding: 0 20px 30px !important;
         width: 100%;
         max-width: 313px;
         /* ← 子と同じ幅 */
         margin: 0 auto;
-        gap: 20px;
+        gap: 30px;
     }
 
     footer .flex>div {
@@ -575,6 +612,17 @@ footer .copyright small {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
+    }
+
+    .insta p {
+        margin-bottom: 0;
+        padding-bottom: 20px;
+        font-size: 12px;
+    }
+
+    .insta a img {
+        width: 40px;
+        height: 40px;
     }
 
 }
@@ -645,6 +693,12 @@ footer .copyright small {
         padding: 0 10px;
     }
 
+    #large-frame {
+        max-width: 425px;
+        max-height: 685px;
+        margin: 50px 0 20px;
+    }
+
     h2 img {
         max-width: 100%;
         height: 160px;
@@ -659,7 +713,6 @@ footer .copyright small {
     -------------------- */
     p {
         font-size: 14px;
-
     }
 
     /* --------------------
@@ -716,6 +769,7 @@ footer .copyright small {
     .sp-flex {
         display: flex !important;
         flex-direction: column !important;
+        gap: 5px;
 
         width: 100% !important;
         max-width: 310px !important;
@@ -748,6 +802,16 @@ footer .copyright small {
         margin-top: 5px;
     }
 
+    .sp-flex .date {
+        padding-left: 0;
+    }
+
+    .top-article a {
+        padding: 10px 80px 50px 0 !important;
+        text-align: right;
+        font-size: 14px;
+    }
+
     /* --------------------
        ボタンやリンクの調整
     -------------------- */
@@ -756,7 +820,6 @@ footer .copyright small {
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
-        margin-bottom: 20px;
     }
 
     #buttons li {
@@ -782,17 +845,6 @@ footer .copyright small {
     footer address p {
         margin: 2px 0;
         font-size: 12px;
-    }
-
-    .insta p {
-        margin-bottom: 0;
-        padding-bottom: 20px;
-        font-size: 12px;
-    }
-
-    .insta a img {
-        width: 40px;
-        height: 40px;
     }
 
     .copyright {

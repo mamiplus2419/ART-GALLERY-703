@@ -5,33 +5,32 @@
 ============================================== */
 
 main {
-    background-color: #efefef;
-    color: #000;
+  background-color: #efefef;
+  color: #000;
 }
 
 /* ARTエリア内上下の余白 */
 .art-section {
-    padding-top: 50px;
-    padding-bottom: 100px;
+  padding: 50px 0;
 }
 
 h2 {
-    padding-bottom: 50px;
-    text-align: center;
+  padding-bottom: 50px;
+  text-align: center;
 }
 
 /* アイテムの位置調節 */
 .art-section .flex {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap:50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
 }
 
 /* ⚫︎ imgとfigcaptionの間の余白 */
-.art-section .caption{
-    margin-top: 20px;
-    text-align: center;
-    /* padding-bottom: 50px; */
+.art-section .caption {
+  margin-top: 20px;
+  text-align: center;
+  /* padding-bottom: 50px; */
 }
 
 /* ==============================================
@@ -65,14 +64,16 @@ h2 {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
 }
 
 .modal-content-wrapper {
-  position: relative; /* ×ボタンの基準 */
-  display: inline-block; /* 画像サイズに合わせる */
+  position: relative;
+  /* ×ボタンの基準 */
+  display: inline-block;
+  /* 画像サイズに合わせる */
 }
 
 .modal-content {
@@ -83,8 +84,10 @@ h2 {
 
 .close {
   position: absolute;
-  top: -2px;  /* 画像右上より少し上 */
-  right: -2px; /* 画像右上より少し右 */
+  top: -2px;
+  /* 画像右上より少し上 */
+  right: -2px;
+  /* 画像右上より少し右 */
   color: white;
   font-size: 30px;
   font-weight: bold;
@@ -93,9 +96,27 @@ h2 {
 }
 
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    ARTページ用メディアクエリを用いたスタイルの「切り替え」を行っていく記述
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
+/* -----------------------------------------
+  500px以下の画面に向けた記述　※768px以下はcommon.cssに任せる
+----------------------------------------- */
 
+@media screen and (max-width: 500px) {
 
+  section h2,
+  article h2 {
+    padding: 0;
+  }
 
+  .art-section {
+    padding: 50px 0;
+  }
 
-
+  main .flex {
+    flex-direction: column;
+    margin: 0 10px 0px;
+  }
+}
