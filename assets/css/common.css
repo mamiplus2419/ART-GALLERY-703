@@ -15,9 +15,9 @@ body {
 }
 
 /* ~~~ wrapによるコンテンツ幅の制御 ~~~ */
-
 .wrap {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -42,6 +42,11 @@ article h2 {
     padding: 50px 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* ==============================================
    ◆ ヘッダー部分
@@ -56,6 +61,72 @@ header h1 img {
     height: 100%;
     margin: 0 auto;
     padding: 30px 0;
+}
+
+nav ul li {
+    width: 151px;
+    height: 70px;
+}
+
+nav ul li a {
+    display: block;
+    height: 100%;
+    color: transparent;
+    font-size: 0;
+}
+
+nav ul .nav01 a {
+    background-image: url(../images/nav_HOME_151x70.svg);
+    transition: 0.3s;
+}
+
+nav ul .nav02 a {
+    background-image: url(../images/nav_ABOUT_151x70.svg);
+    transition: 0.3s;
+}
+
+nav ul .nav03 a {
+    background-image: url(../images/nav_ART_151x70.svg);
+    transition: 0.3s;
+}
+
+nav ul .nav04 a {
+    background-image: url(../images/nav_GOODS&CAFE_151x70.svg);
+    transition: 0.3s;
+}
+
+nav ul .nav05 a {
+    background-image: url(../images/nav_NEWS_151x70.svg);
+    transition: 0.3s;
+}
+
+nav ul .nav06 a {
+    background-image: url(../images/nav_CONTACT_151x70.svg);
+    transition: 0.3s;
+}
+
+nav ul .nav01 a:hover {
+    background-image: url(../images/nav_HOME_hover_151x70.svg);
+}
+
+nav ul .nav02 a:hover {
+    background-image: url(../images/nav_ABOUT_hover_151x70.svg);
+}
+
+nav ul .nav03 a:hover {
+    background-image: url(../images/nav_ART_hover_151x70.svg);
+}
+
+nav ul .nav04 a:hover {
+    background-image: url(../images/nav_GOODS&CAFE_hover_151x70.svg);
+}
+
+nav ul .nav05 a:hover {
+    background-image: url(../images/nav_NEWS_hover_151x70.svg);
+}
+
+nav ul .nav06 a:hover {
+    background-image: url(../images/nav_CONTACT_hover_151x70.svg);
 }
 
 nav .flex {
@@ -75,26 +146,26 @@ nav .flex {
 
 #large-frame {
     position: relative;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 684px;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    }
+}
 
 #large-frame img {
     position: absolute;
     top: 0;
-  left: 0;
+    left: 0;
     display: block;
     width: 100%;
     height: 100%;
     max-height: 80vh;
     object-fit: contain;
     object-position: center;
-    transition: opacity 3s;
 }
 
 
@@ -113,7 +184,8 @@ nav .flex {
 }
 
 .inner {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -149,7 +221,7 @@ nav .flex {
 
     100% {
         background-position: 0 -3454px;
-        /* 「-1416px」＝用意した画像の横幅 */
+        /* 「-3454px」＝用意した画像の高さ */
     }
 }
 
@@ -157,6 +229,7 @@ nav .flex {
     width: 350px;
     height: 530px;
     /* 「350px」＝用意した画像の幅 */
+    /* 「530px」＝表示したい領域の高さ */
     background-image: url(../images/slide-image_350x3454.png);
     background-repeat: repeat-y;
     background-position: 0 0;
@@ -172,8 +245,12 @@ nav .flex {
 
 .top-article .inner {
     display: block;
-    width: 430px;
+    max-width: 430px;
     margin: 0 auto;
+}
+
+.top-article .inner li div {
+    width: 100%;
 }
 
 article .link-button {
@@ -182,7 +259,7 @@ article .link-button {
 
 .top-article a {
     display: inline-block;
-    padding-top: 30px;
+    padding: 30px 150px 50px 0;
     color: #000;
 }
 
@@ -211,9 +288,19 @@ footer .copyright small {
     font-size: 14px;
 }
 
+/*  Instagramの並び */
+.insta {
+    padding: auto;
+    text-align: center;
+}
+
+.insta p {
+    padding-bottom: 25px;
+}
+
 
 /* ==============================================
-    トップボタン 
+   ◆ トップボタン 
 ============================================== */
 
 .to-top {
@@ -221,4 +308,511 @@ footer .copyright small {
     position: fixed;
     right: 40px;
     bottom: 40px;
+}
+
+
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    メディアクエリを用いたスタイルの「切り替え」を行っていく記述
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+/* -----------------------------------------
+  1040px以下の画面に向けた記述（個人的に気持ち悪いので微調整）
+----------------------------------------- */
+
+@media screen and (max-width: 1040px) {
+
+    /* フッター */
+    footer .flex {
+        padding: 0 auto;
+        width: 90%;
+        /* 画面の90%の幅に自動で縮む */
+    }
+
+    /* トップボタン */
+    .to-top {
+        /* 表示位置の調整 */
+        right: 10px;
+    }
+
+}
+
+
+/* -----------------------------------------
+  768px以下の画面に向けた記述
+----------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+    /* --- PC版の1000pxや固定余白をリセット（はみ出しの根絶） --- */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box !important;
+    }
+
+    header,
+    nav,
+    .wrap,
+    .top-main,
+    .top-article {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 左右に20pxの遊びを作る */
+    .inner {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        margin: 0 auto !important;
+    }
+
+    /* --------------------
+       ハンバーガーボタン対応(動作はJSで制御)
+    -------------------- */
+    /* ハンバーガーボタン初期 */
+
+    .nav-burger {
+        display: block;
+        position: fixed;
+        top: 50px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        background-image: url("../images/burger_30x30.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 10000;
+        cursor: pointer;
+        transition: opacity 2s ease;
+    }
+
+    .nav-burger.is-open {
+        background-image: url("../images/close_30x30.svg");
+    }
+
+    /* ナビゲーション */
+    .navi {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background-color: rgba(175, 175, 176, 0.95);
+        transition: height 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .navi .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ナビゲーションを開いたとき */
+    .navi.is-open {
+        height: 100vh;
+    }
+
+    .navi ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 100px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navi ul li {
+        margin: 20px 0;
+    }
+
+    .navi ul li a {
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+        background-image: none;
+    }
+
+
+    /* --------------------
+       メインレイアウト
+    -------------------- */
+    .inner.flex,
+    .top-main .flex,
+    footer .flex {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        /* 子要素を中央へ */
+    }
+
+    .top-text {
+        width: 100% !important;
+        max-width: 554px !important;
+        margin: 50px auto !important;
+        text-align: left !important;
+        overflow-wrap: break-word;
+    }
+
+    /* スライダーを500x500で中央に配置 */
+    .slider-area {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        /* 正方形にする */
+        margin: 0 auto 50px !important;
+        background-size: cover !important;
+        float: none !important;
+        display: block !important;
+    }
+
+    /* --------------------
+       メインビジュアルの画像の調整
+    -------------------- */
+    .frame {
+        margin: auto !important;
+        background-color: #fff !important;
+        width: 100% !important;
+    }
+
+    #large-frame {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 600px !important;
+        max-height: 480px;
+
+        /* ★外枠の高さを比率で固定（画像が変わってもガタガタしない） */
+        aspect-ratio: 1 / 1 !important;
+        /* ★背景色をグレーから白へ */
+        background-color: #fff !important;
+        margin: 50px auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+    }
+
+    #large-frame img {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: auto !important;
+        height: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        /* ★枠内に収める（隙間が白になる） */
+        object-fit: contain !important;
+    }
+
+    /* --------------------
+       NEWSエリア
+    -------------------- */
+    .top-article .inner {
+        width: 90% !important;
+        /* 少し余裕を持たせる */
+        max-width: 430px !important;
+        /* PC版のテキスト幅を維持 */
+        margin: 0 auto !important;
+        /* ★これでど真ん中に来る */
+        text-align: left !important;
+        /* リスト自体は左寄せ */
+        padding: 0 !important;
+        /* 余計なパディングを消す */
+    }
+
+    /* リンクボタンを右端に */
+    .top-article a {
+        display: block !important;
+        width: 100% !important;
+        padding: 10px 0 !important;
+        text-align: right;
+        font-size: 14px;
+    }
+
+    /* --------------------
+       トップボタン
+    -------------------- */
+    .to-top {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 50px !important;
+        z-index: 9000 !important;
+    }
+
+    /* --------------------
+       フッター
+    -------------------- */
+    footer .flex {
+        flex-direction: column;
+        align-items: center !important;
+        /* ← ここ変更 */
+        padding: 0 20px 50px !important;
+        width: 100%;
+        max-width: 313px;
+        /* ← 子と同じ幅 */
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    footer .flex>div {
+        width: 100%;
+        max-width: 313px;
+        /* ← ロゴに合わせる */
+        text-align: center;
+    }
+
+    footer address {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+}
+
+
+/* -----------------------------------------
+  500px以下の画面に向けた記述
+----------------------------------------- */
+
+@media screen and (max-width:500px) {
+
+    /* --------------------
+       ヘッダーのロゴ
+    -------------------- */
+    h1 img {
+        max-width: 60%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* --------------------
+       見出し
+    -------------------- */
+    section h2,
+    article h2 {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    /* --------------------
+       ハンバーガーボタン
+    -------------------- */
+    .nav-burger {
+        top: 40px;
+        right: 5px;
+    }
+
+    /* --------------------
+       ナビゲーション
+    -------------------- */
+    .navi ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 80px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navi ul li {
+        margin: 10px 0;
+    }
+
+    .navi ul li a {
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        background-image: none;
+    }
+
+    /* --------------------
+       メインフレームの余白
+    -------------------- */
+    .frame {
+        margin: 20px auto 0;
+        padding: 0 10px;
+    }
+
+    h2 img {
+        max-width: 100%;
+        height: 160px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    /* --------------------
+       テキスト
+    -------------------- */
+    p {
+        font-size: 14px;
+
+    }
+
+    /* --------------------
+       トップテキスト
+    -------------------- */
+    .top-text span {
+        font-size: 26px;
+    }
+
+    .large-text {
+        margin-bottom: 30px;
+    }
+
+    .top-margin36 {
+        margin-top: 20px;
+    }
+
+    /* --------------------
+       section、article部分の余白
+    -------------------- */
+    section,
+    article {
+        padding: 0 10px;
+    }
+
+    section h3,
+    article {
+        font-size: 16px;
+        margin: 0 0 20px;
+    }
+
+    section h3 span,
+    .top-article h3 span {
+        padding: 8px 0 8px 8px;
+    }
+
+    .text {
+        margin: 0 10px 20px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .top-article li {
+        font-size: 14px
+    }
+
+    .top-article a {
+        padding: 30px 0 50px !important;
+    }
+
+    /* --------------------
+       スマホ用Flexbox対応(日付とニュースを縦に陳列)
+    -------------------- */
+    .sp-flex {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        max-width: 310px !important;
+
+        margin: 0 auto 20px !important;
+        /* 中央に置く */
+        text-align: left !important;
+    }
+
+    /* 中の文字が折り返さないように、念のため子要素も調整 */
+    .sp-flex div {
+        width: 100% !important;
+    }
+
+    /* 横並び→縦積みに */
+    main .flex {
+        flex-direction: column;
+        margin: 0 10px 40px;
+    }
+
+    main figure {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    main figcaption {
+        text-align: left;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    /* --------------------
+       ボタンやリンクの調整
+    -------------------- */
+    #buttons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    #buttons li {
+        width: 80px;
+        height: 50px;
+        margin: 0;
+    }
+
+    #large-frame img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* --------------------
+       フッター
+    -------------------- */
+    footer {
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    footer address p {
+        margin: 2px 0;
+        font-size: 12px;
+    }
+
+    .insta p {
+        margin-bottom: 0;
+        padding-bottom: 20px;
+        font-size: 12px;
+    }
+
+    .insta a img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .copyright {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+    footer .flex {
+        padding: 0 0 30px !important;
+    }
+
+    /* --------------------
+       トップボタン
+    -------------------- */
+    .to-top {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 5px !important;
+        width: 30px !important;
+        z-index: 9000 !important;
+    }
+
 }
