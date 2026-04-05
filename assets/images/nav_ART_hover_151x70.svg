@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="151px"
+	 height="70px" viewBox="0 0 151 70" enable-background="new 0 0 151 70" xml:space="preserve">
+<g id="ガイド-コンテンツ幅" display="none">
+</g>
+<g id="背景-_x23_fff">
+	<rect x="-495" y="-247" fill="#FFFFFF" width="1280" height="2090"/>
+</g>
+<g id="ナビゲーション" display="none">
+	<rect x="-332" y="-54" display="inline" fill="#FF8F70" width="970" height="94"/>
+</g>
+<g id="ヘッダー">
+	<g>
+		<rect fill="none" width="151" height="70"/>
+		<rect x="150" fill="#AFAFB0" width="1" height="70"/>
+	</g>
+	<g>
+		<path fill="#AFAFB0" d="M62.228,40l3.936-10.678h1.278L71.377,40h-1.615l-2.959-8.614L63.843,40H62.228z M64.041,37.657v-1.425
+			h5.618v1.425H64.041z"/>
+		<path fill="#AFAFB0" d="M72.993,40V29.314h1.498V40H72.993z M73.646,35.483v-1.425h3.643c0.436,0,0.786-0.151,1.05-0.455
+			c0.265-0.304,0.396-0.705,0.396-1.204c0-0.5-0.132-0.901-0.396-1.205c-0.264-0.304-0.614-0.455-1.05-0.455h-3.643v-1.425h3.584
+			c0.622,0,1.165,0.129,1.63,0.386c0.466,0.257,0.826,0.615,1.084,1.076c0.257,0.46,0.385,1.001,0.385,1.623
+			c0,0.616-0.13,1.156-0.389,1.619c-0.26,0.462-0.621,0.822-1.083,1.079c-0.463,0.257-1.005,0.386-1.627,0.386H73.646z M79,40
+			l-2.445-4.847l1.491-0.338L80.777,40H79z"/>
+		<path fill="#AFAFB0" d="M81.328,30.747v-1.425h7.534v1.425H81.328z M84.347,40v-9.804h1.498V40H84.347z"/>
+	</g>
+</g>
+</svg>
